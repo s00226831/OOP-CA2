@@ -26,7 +26,7 @@ namespace CA2
         public MainWindow()
         {
             InitializeComponent();
-            
+
         }
 
         private void btnWin_Click(object sender, RoutedEventArgs e)
@@ -58,7 +58,7 @@ namespace CA2
             // (this bit is also off moodle)
 
             //French players
-            Player p1 = new Player() { Name = "Marie", ResultRecords = "WWDDL" };
+            Player p1 = new Player() { Name = "Marie", ResultRecords = "WWDDL"};
             Player p2 = new Player() { Name = "Claude", ResultRecords = "DDDLW" };
             Player p3 = new Player() { Name = "Antoine", ResultRecords = "LWDLW" };
 
@@ -75,15 +75,15 @@ namespace CA2
             // creating a team list and adding the teams
             List<Team> teamlist = new List<Team>();
             teamlist.Add(t1);
-            teamlist.Add(t2);   
+            teamlist.Add(t2);
             teamlist.Add(t3);
 
             // showing the team lists in the listbox
             lbxTeams.ItemsSource = teamlist;
 
-            //adding players to teams
+            // adding players to teams
             t1.Players.Add(p1);
-            t1.Players.Add(p2); 
+            t1.Players.Add(p2);
             t1.Players.Add(p3);
             t2.Players.Add(p4);
             t2.Players.Add(p5);
@@ -91,6 +91,21 @@ namespace CA2
             t3.Players.Add(p7);
             t3.Players.Add(p8);
             t3.Players.Add(p9);
+
+            //calculate points for each player
+            p1.CalculatePoints();
+            p2.CalculatePoints();
+            p3.CalculatePoints();
+            p4.CalculatePoints();
+            p5.CalculatePoints();
+            p6.CalculatePoints();
+            p7.CalculatePoints();
+            p8.CalculatePoints();
+            p9.CalculatePoints();
+
+
+            
+            
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -98,5 +113,23 @@ namespace CA2
             //calls the getdata method when the window first loads up
             GetData();
         }
+
+        private void lbxTeams_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // When a team is selected it will show the players in it
+            Team selected = lbxTeams.SelectedItem as Team;
+
+            if (selected != null)
+            {
+                lbxPlayers.ItemsSource = selected.Players;
+            }
+        }
+
+    
+
+
+        
+
+        
     }
 }
