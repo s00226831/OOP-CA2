@@ -15,7 +15,7 @@
         <Button x:Name="btnDraw" Content="Draw" HorizontalAlignment="Left" Margin="194,337,0,0" VerticalAlignment="Top" Click="btnDraw_Click" Grid.Column="1"/>
         <Button x:Name="btnWin" Content="Win" HorizontalAlignment="Left" Margin="194,256,0,0" VerticalAlignment="Top" Click="btnWin_Click" Grid.Column="1"/>
         <ListBox x:Name="lbxTeams" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="127,113,203,211" SelectionChanged="lbxTeams_SelectionChanged"/>
-        <ListBox x:Name="lbxPlayers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="361,113,293,211" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="lbxPlayers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="361,113,293,211" Grid.ColumnSpan="2" SelectionChanged="lbxPlayers_SelectionChanged"/>
         <Label x:Name="lblTeams" Content="Teams" HorizontalAlignment="Left" Margin="184,87,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPlayers" Content="Players" HorizontalAlignment="Left" Margin="400,87,0,0" VerticalAlignment="Top"/>
         <Label x:Name="LblResult" Content="Record Result" HorizontalAlignment="Left" Margin="169,217,0,0" VerticalAlignment="Top" Grid.Column="1"/>

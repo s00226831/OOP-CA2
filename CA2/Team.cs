@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CA2
 {
-    internal class Team
+    internal class Team : IComparable
     {
         // team name property
         public string Name 
@@ -38,6 +38,23 @@ namespace CA2
         public override string ToString()
         {
             return $"{Name} {Points}";
+        }
+
+        public int CompareTo(object obj)
+        {
+            Team that = obj as Team;
+            if (this.Points > that.Points)
+            {
+                return -1;
+            }
+            else if (this.Points < that.Points)
+            {
+                return 1;
+            }
+            else
+            {
+                return this.Points.CompareTo(that.Points);
+            }
         }
     }
 }

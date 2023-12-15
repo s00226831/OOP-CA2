@@ -108,6 +108,8 @@ namespace CA2
             t2.Points = (p4.Points + p5.Points + p6.Points);
             t3.Points = (p7.Points + p8.Points + p9.Points);
 
+            // sorts the team in order of points
+            teamlist.Sort();
             
             
         }
@@ -129,10 +131,10 @@ namespace CA2
             }
         }
 
-    
+        private void lbxPlayers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
-
-        
+        }
 
         
     }
