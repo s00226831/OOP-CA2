@@ -20,7 +20,7 @@ namespace CA2
             get;
             set;
         }
-
+        // players points
         public int Points
         {
             get;

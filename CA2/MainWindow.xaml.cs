@@ -92,7 +92,7 @@ namespace CA2
             t3.Players.Add(p8);
             t3.Players.Add(p9);
 
-            //calculate points for each player
+            // calculate points for each player
             p1.CalculatePoints();
             p2.CalculatePoints();
             p3.CalculatePoints();
@@ -103,6 +103,10 @@ namespace CA2
             p8.CalculatePoints();
             p9.CalculatePoints();
 
+            // calculate the teams totals points
+            t1.Points = (p1.Points + p2.Points + p3.Points);
+            t2.Points = (p4.Points + p5.Points + p6.Points);
+            t3.Points = (p7.Points + p8.Points + p9.Points);
 
             
             
