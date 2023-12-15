@@ -5,21 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CA2"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <Button x:Name="btnLoss" Content="Loss" HorizontalAlignment="Left" Margin="672,297,0,0" VerticalAlignment="Top" Click="btnLoss_Click"/>
-        <Button x:Name="btnDraw" Content="Draw" HorizontalAlignment="Left" Margin="672,337,0,0" VerticalAlignment="Top" Click="btnDraw_Click"/>
-        <Button x:Name="btnWin" Content="Win" HorizontalAlignment="Left" Margin="672,256,0,0" VerticalAlignment="Top" Click="btnWin_Click"/>
-        <ListBox x:Name="lbxTeams" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="175,113,531,211"/>
-        <ListBox x:Name="lbxPlayers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="400,118,293,210"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="239*"/>
+            <ColumnDefinition Width="161*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnLoss" Content="Loss" HorizontalAlignment="Left" Margin="194,297,0,0" VerticalAlignment="Top" Click="btnLoss_Click" Grid.Column="1"/>
+        <Button x:Name="btnDraw" Content="Draw" HorizontalAlignment="Left" Margin="194,337,0,0" VerticalAlignment="Top" Click="btnDraw_Click" Grid.Column="1"/>
+        <Button x:Name="btnWin" Content="Win" HorizontalAlignment="Left" Margin="194,256,0,0" VerticalAlignment="Top" Click="btnWin_Click" Grid.Column="1"/>
+        <ListBox x:Name="lbxTeams" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="175,113,209,211"/>
+        <ListBox x:Name="lbxPlayers" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="400,118,293,210" Grid.ColumnSpan="2"/>
         <Label x:Name="lblTeams" Content="Teams" HorizontalAlignment="Left" Margin="184,87,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPlayers" Content="Players" HorizontalAlignment="Left" Margin="400,87,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="LblResult" Content="Record Result" HorizontalAlignment="Left" Margin="647,217,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblPlayerRating" Content="Player Rating" HorizontalAlignment="Left" Margin="659,44,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblTitle" Content="TiddlyWinks World Cup" HorizontalAlignment="Left" Margin="184,15,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" FontFamily="Cooper Black"/>
-        <Image x:Name="imgStar1" HorizontalAlignment="Left" Height="30" Margin="647,85,0,0" VerticalAlignment="Top" Width="31" Source="/staroutline.png"/>
-        <Image x:Name="imgStar2" HorizontalAlignment="Left" Height="30" Margin="682,85,0,0" VerticalAlignment="Top" Width="31" Source="/staroutline.png"/>
-        <Image x:Name="imgStar3" HorizontalAlignment="Left" Height="30" Margin="717,85,0,0" VerticalAlignment="Top" Width="31" Source="/staroutline.png"/>
+        <Label x:Name="LblResult" Content="Record Result" HorizontalAlignment="Left" Margin="169,217,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="lblPlayerRating" Content="Player Rating" HorizontalAlignment="Left" Margin="181,44,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <Label x:Name="lblTitle" Content="TiddlyWinks World Cup" HorizontalAlignment="Left" Margin="184,15,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="24" FontFamily="Cooper Black" Grid.ColumnSpan="2"/>
+        <Image x:Name="imgStar1" HorizontalAlignment="Left" Height="30" Margin="169,85,0,0" VerticalAlignment="Top" Width="31" Source="/staroutline.png" Grid.Column="1"/>
+        <Image x:Name="imgStar2" HorizontalAlignment="Left" Height="30" Margin="204,85,0,0" VerticalAlignment="Top" Width="31" Source="/staroutline.png" Grid.Column="1"/>
+        <Image x:Name="imgStar3" HorizontalAlignment="Left" Height="30" Margin="239,85,0,0" VerticalAlignment="Top" Width="31" Source="/staroutline.png" Grid.Column="1"/>
 
     </Grid>
 </Window>

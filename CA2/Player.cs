@@ -21,11 +21,6 @@ namespace CA2
             set;
         }
 
-        // contructor to create a player
-        public Player(string name, string resultRecords)
-        {
-            Name = name;
-            ResultRecords = resultRecords;
-        }
+        
     }
 }

@@ -26,5 +26,12 @@ namespace CA2
         {
             Players = new List<Player> ();
         }
+
+        
+        //overrides the default string
+        public override string ToString()
+        {
+            return $"{Name}";
+        }
     }
 }

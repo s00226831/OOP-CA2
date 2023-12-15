@@ -22,9 +22,11 @@ namespace CA2
     public partial class MainWindow : Window
     {
         // here is a link to the github page: https://github.com/s00226831/OOP-CA2
+
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void btnWin_Click(object sender, RoutedEventArgs e)
@@ -40,6 +42,61 @@ namespace CA2
         private void btnDraw_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void GetData()
+        {
+            // this method creates all the data
+            // creating teams
+            // (this bit is off moodle)
+            Team t1 = new Team() { Name = "France" };
+            Team t2 = new Team() { Name = "Italy" };
+            Team t3 = new Team() { Name = "Spain" };
+
+
+            // creating the players
+            // (this bit is also off moodle)
+
+            //French players
+            Player p1 = new Player() { Name = "Marie", ResultRecords = "WWDDL" };
+            Player p2 = new Player() { Name = "Claude", ResultRecords = "DDDLW" };
+            Player p3 = new Player() { Name = "Antoine", ResultRecords = "LWDLW" };
+
+            //Italian players
+            Player p4 = new Player() { Name = "Marco", ResultRecords = "WWDLL" };
+            Player p5 = new Player() { Name = "Giovanni", ResultRecords = "LLLLD" };
+            Player p6 = new Player() { Name = "Valentina", ResultRecords = "DLWWW" };
+
+            //Spanish players
+            Player p7 = new Player() { Name = "Maria", ResultRecords = "WWWWW" };
+            Player p8 = new Player() { Name = "Jose", ResultRecords = "LLLLL" };
+            Player p9 = new Player() { Name = "Pablo", ResultRecords = "DDDDD" };
+
+            // creating a team list and adding the teams
+            List<Team> teamlist = new List<Team>();
+            teamlist.Add(t1);
+            teamlist.Add(t2);   
+            teamlist.Add(t3);
+
+            // showing the team lists in the listbox
+            lbxTeams.ItemsSource = teamlist;
+
+            //adding players to teams
+            t1.Players.Add(p1);
+            t1.Players.Add(p2); 
+            t1.Players.Add(p3);
+            t2.Players.Add(p4);
+            t2.Players.Add(p5);
+            t2.Players.Add(p6);
+            t3.Players.Add(p7);
+            t3.Players.Add(p8);
+            t3.Players.Add(p9);
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            //calls the getdata method when the window first loads up
+            GetData();
         }
     }
 }
